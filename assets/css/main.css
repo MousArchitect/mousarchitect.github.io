@@ -3327,3 +3327,13 @@ input, select, textarea {
 			}
 
 		}
+
+
+/* Home page layout */
+	.home-banner img { width: 100%; }
+	.section-bar { background: rgba(0,0,0,0.08); padding: 0.6em 1em; margin: 2em 0 1.5em 0; font-size: 1.5em; letter-spacing: 0; text-transform: none; }
+	.home-about { display: flex; gap: 2em; align-items: flex-start; }
+	.home-about > .image { flex: 0 0 35%; }
+	.home-about > .image img { width: 100%; border-radius: 4px; display: block; }
+	.home-about > div { flex: 1; }
+	@media screen and (max-width: 736px) { .home-about { flex-direction: column; } .home-about > .image { flex: none; width: 100%; } }
