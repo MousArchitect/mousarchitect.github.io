@@ -3364,5 +3364,15 @@ margin: -0.5em 0 0.75em;
 .project-video { margin: 2.5em 0; }
 .video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #111; }
 .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.project-gallery { margin: 3.5em 0 2em; }
+.project-gallery > h2 { margin-bottom: .65em; }
+.area-gallery { border-top: 1px solid rgba(88,88,88,.25); margin-top: 2.5em; padding-top: 2em; }
+.area-gallery h3 { font-size: 1.05em; letter-spacing: .12em; margin-bottom: .75em; }
+.area-gallery > p { max-width: 48em; }
+.gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5em; }
+.area-gallery figure { margin: 1.25em 0 0; }
+.gallery-grid figure { margin-top: 0; }
+.area-gallery figure img { display: block; width: 100%; height: auto; }
+.area-gallery figcaption { font-size: .8em; margin-top: .6em; opacity: .75; }
 @media screen and (max-width: 736px) { .process, .project-meta { grid-template-columns: 1fr 1fr; } }
 @media screen and (max-width: 480px) { .process, .project-meta { grid-template-columns: 1fr; } }
