@@ -3344,3 +3344,19 @@ font-size: 1.75em;
 font-weight: 900;
 margin: -0.5em 0 0.75em;
 }
+/* Conversion, process, project, and legal content */
+.hero-copy { padding: 2.5em 0 1em; max-width: 48em; }
+.hero-copy h1 { margin-bottom: .35em; }
+.process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1em; margin: 1.5em 0 2em; }
+.process div, .project-meta div { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); padding: 1.25em; }
+.process strong, .project-meta strong { display: block; margin-bottom: .35em; }
+.process span, .project-meta span { display: block; font-size: .9em; opacity: .8; }
+.project-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin: 2em 0; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78em; font-weight: 700; opacity: .75; }
+.faq { margin: 1em 0 2em; }
+.faq details { border-bottom: 1px solid rgba(255,255,255,.2); padding: 1em 0; }
+.faq summary { cursor: pointer; font-weight: 700; }
+.faq p { margin: 1em 0 0; }
+.small-note { font-size: .85em; opacity: .72; }
+@media screen and (max-width: 736px) { .process, .project-meta { grid-template-columns: 1fr 1fr; } }
+@media screen and (max-width: 480px) { .process, .project-meta { grid-template-columns: 1fr; } }
