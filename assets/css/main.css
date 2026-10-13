@@ -3337,3 +3337,10 @@ input, select, textarea {
 	.home-about > .image img { width: 100%; border-radius: 4px; display: block; }
 	.home-about > div { flex: 1; }
 	@media screen and (max-width: 736px) { .home-about { flex-direction: column; } .home-about > .image { flex: none; width: 100%; } }
+
+/* Services pricing */
+.price {
+font-size: 1.75em;
+font-weight: 900;
+margin: -0.5em 0 0.75em;
+}
