@@ -3374,5 +3374,14 @@ margin: -0.5em 0 0.75em;
 .gallery-grid figure { margin-top: 0; }
 .area-gallery figure img { display: block; width: 100%; height: auto; }
 .area-gallery figcaption { font-size: .8em; margin-top: .6em; opacity: .75; }
+body.project-northport { --project-bg: #e7eee3; --project-surface: rgba(255,255,255,.48); --project-accent: #315944; --project-line: rgba(49,89,68,.28); }
+body.project-knight { --project-bg: #eeeee5; --project-surface: rgba(255,255,255,.5); --project-accent: #596752; --project-line: rgba(89,103,82,.3); }
+body.project-makkah { --project-bg: #e7edef; --project-surface: rgba(255,255,255,.5); --project-accent: #27434a; --project-line: rgba(39,67,74,.3); }
+body.project-eco { --project-bg: #e8f4fb; --project-surface: rgba(255,255,255,.56); --project-accent: #1466a8; --project-line: rgba(20,102,168,.28); }
+body[class*="project-"] { background: var(--project-bg); }
+body[class*="project-"] h1, body[class*="project-"] h2, body[class*="project-"] h3 { color: var(--project-accent); }
+body[class*="project-"] a { color: var(--project-accent); }
+body[class*="project-"] .project-meta > div { background: var(--project-surface); border-color: var(--project-line); }
+body[class*="project-"] .area-gallery { border-color: var(--project-line); }
 @media screen and (max-width: 736px) { .process, .project-meta { grid-template-columns: 1fr 1fr; } }
 @media screen and (max-width: 480px) { .process, .project-meta { grid-template-columns: 1fr; } }
