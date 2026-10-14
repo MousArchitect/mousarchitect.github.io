@@ -62,7 +62,7 @@
 							<header>
 								<h1>Get in Touch</h1>
 								<!-- TODO: replace with real contact details / a short invitation to reach out -->
-								<p>Have a project in mind? Send a message using the form below, or reach out directly using the details in the footer.</p>
+									<p>Have a project in mind? Use the form below to prepare an email, or contact MousArchitect directly.</p>
 							</header>
 						</div>
 					</div>
@@ -72,21 +72,25 @@
 						<div class="inner">
 							<section>
 								<h2>Get in touch</h2>
-								<p class="small-note">The form opens your email app. You can also email <a href="mailto:mousarchitect.info@gmail.com">mousarchitect.info@gmail.com</a> directly.</p>
-								<form method="post" action="mailto:mousarchitect.info@gmail.com" enctype="text/plain">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
+									<p class="small-note">When you select Send, your email app will open with the message ready to send. You can also email <a href="mailto:mousarchitect.info@gmail.com">mousarchitect.info@gmail.com</a> directly.</p>
+									<form id="contact-form" method="post" action="mailto:mousarchitect.info@gmail.com">
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" placeholder="Your name" required />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="email" name="email" id="email" placeholder="you@example.com" required />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" placeholder="Tell me about your project" rows="6" required></textarea>
 										</div>
 									</div>
 									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
+											<li><button type="submit" class="primary">Open Email to Send</button></li>
+											<li><a href="mailto:mousarchitect.info@gmail.com" class="button">Email Directly</a></li>
 									</ul>
 								</form>
 							</section>
@@ -114,6 +118,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/contact-form.js"></script>
 
 	</body>
 </html>
