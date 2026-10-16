@@ -3350,9 +3350,11 @@ margin: -0.5em 0 0.75em;
 	.tiles article > a .content p { font-size: .9em; line-height: 1.5; }
 	.portfolio-filters { display: flex; flex-wrap: wrap; gap: 1.35em; margin: 2.25em 0 1.75em; border-bottom: 1px solid rgba(88,88,88,.25); }
 	.portfolio-filters button { appearance: none; background: transparent; border: 0; border-bottom: 2px solid transparent; color: inherit; cursor: pointer; font: inherit; font-size: .8em; font-weight: 700; letter-spacing: .12em; padding: 0 0 .8em; text-transform: uppercase; transition: color .2s ease, border-color .2s ease; }
-	.portfolio-filters button:hover, .portfolio-filters button:focus-visible, .portfolio-filters button.is-active { color: #2f3e2f; border-bottom-color: currentColor; }
-	.portfolio-filters button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-	.tiles article.is-filtered-out { display: none; }
+		.portfolio-filters button:hover, .portfolio-filters button:focus-visible, .portfolio-filters button.is-active { color: #2f3e2f; border-bottom-color: currentColor; }
+		.portfolio-filters button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+		.tiles article { transition: opacity .35s ease, transform .35s ease; }
+		.tiles article.is-filtering-in, .tiles article.is-filtering-out { opacity: 0; transform: translateY(10px); pointer-events: none; }
+		.tiles article.is-filtered-out { display: none; }
 	.hero-copy { padding: 2.5em 0 1em; max-width: 48em; }
 .hero-copy h1 { margin-bottom: .35em; }
 .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1em; margin: 1.5em 0 2em; }
@@ -3387,8 +3389,12 @@ body[class*="project-"] { background: var(--project-bg); }
 body[class*="project-"] h1, body[class*="project-"] h2, body[class*="project-"] h3 { color: var(--project-accent); }
 body[class*="project-"] a { color: var(--project-accent); }
 body[class*="project-"] .project-meta > div { background: var(--project-surface); border-color: var(--project-line); }
-body[class*="project-"] .area-gallery { border-color: var(--project-line); }
-@media screen and (max-width: 736px) { .process, .project-meta { grid-template-columns: 1fr 1fr; } }
+	body[class*="project-"] .area-gallery { border-color: var(--project-line); }
+	@media (prefers-reduced-motion: reduce) {
+		.portfolio-filters button, .tiles article { transition: none; }
+		.tiles article.is-filtering-in, .tiles article.is-filtering-out { opacity: 1; transform: none; }
+	}
+	@media screen and (max-width: 736px) { .process, .project-meta { grid-template-columns: 1fr 1fr; } }
 @media screen and (max-width: 480px) { .process, .project-meta { grid-template-columns: 1fr; } }
 
 
