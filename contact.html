@@ -62,7 +62,7 @@
 							<header>
 								<h1>Get in Touch</h1>
 								<!-- TODO: replace with real contact details / a short invitation to reach out -->
-									<p>Have a project in mind? Use the form below to prepare an email, or contact MousArchitect directly.</p>
+									<p>Have a project in mind? Send a message with the form below, or contact MousArchitect directly.</p>
 							</header>
 						</div>
 					</div>
@@ -72,8 +72,12 @@
 						<div class="inner">
 							<section>
 								<h2>Get in touch</h2>
-									<p class="small-note">When you select Send, your email app will open with the message ready to send. You can also email <a href="mailto:mousarchitect.info@gmail.com">mousarchitect.info@gmail.com</a> directly.</p>
-									<form id="contact-form" method="post" action="mailto:mousarchitect.info@gmail.com">
+									<p class="small-note">Send me a message here and I'll get back to you by email. You can also email <a href="mailto:mousarchitect.info@gmail.com">mousarchitect.info@gmail.com</a> directly.</p>
+									<form id="contact-form" method="post" action="https://formsubmit.co/mousarchitect.info@gmail.com">
+										<input type="hidden" name="_subject" value="New website inquiry" />
+										<input type="hidden" name="_template" value="table" />
+										<input type="hidden" name="_next" value="https://mousarchitect.github.io/contact.html?sent=1" />
+										<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Name</label>
@@ -89,9 +93,10 @@
 										</div>
 									</div>
 									<ul class="actions">
-											<li><button type="submit" class="primary">Open Email to Send</button></li>
+											<li><button type="submit" class="primary">Send Message</button></li>
 											<li><a href="mailto:mousarchitect.info@gmail.com" class="button">Email Directly</a></li>
 									</ul>
+									<p id="form-status" class="small-note" role="status" aria-live="polite"></p>
 								</form>
 							</section>
 							<section>
