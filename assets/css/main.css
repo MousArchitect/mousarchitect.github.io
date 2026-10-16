@@ -3346,9 +3346,14 @@ margin: -0.5em 0 0.75em;
 }
 /* Conversion, process, project, and legal content */
 .tiles article > a h2 { font-size: 1.65em; margin-bottom: .45em; }
-.tiles article > a .content h3 { font-size: 1.05em; line-height: 1.25; margin: 0 0 .65em; font-weight: 800; letter-spacing: .02em; text-transform: none; }
-.tiles article > a .content p { font-size: .9em; line-height: 1.5; }
-.hero-copy { padding: 2.5em 0 1em; max-width: 48em; }
+	.tiles article > a .content h3 { font-size: 1.05em; line-height: 1.25; margin: 0 0 .65em; font-weight: 800; letter-spacing: .02em; text-transform: none; }
+	.tiles article > a .content p { font-size: .9em; line-height: 1.5; }
+	.portfolio-filters { display: flex; flex-wrap: wrap; gap: 1.35em; margin: 2.25em 0 1.75em; border-bottom: 1px solid rgba(88,88,88,.25); }
+	.portfolio-filters button { appearance: none; background: transparent; border: 0; border-bottom: 2px solid transparent; color: inherit; cursor: pointer; font: inherit; font-size: .8em; font-weight: 700; letter-spacing: .12em; padding: 0 0 .8em; text-transform: uppercase; transition: color .2s ease, border-color .2s ease; }
+	.portfolio-filters button:hover, .portfolio-filters button:focus-visible, .portfolio-filters button.is-active { color: #2f3e2f; border-bottom-color: currentColor; }
+	.portfolio-filters button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+	.tiles article.is-filtered-out { display: none; }
+	.hero-copy { padding: 2.5em 0 1em; max-width: 48em; }
 .hero-copy h1 { margin-bottom: .35em; }
 .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1em; margin: 1.5em 0 2em; }
 .process div, .project-meta div { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); padding: 1.25em; }
