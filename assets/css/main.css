@@ -3402,3 +3402,6 @@ body[class*="project-"] .project-meta > div { background: var(--project-surface)
 	.portfolio-filters button, .portfolio-filters button:hover, .portfolio-filters button.is-active { box-shadow: none !important; height: auto !important; line-height: 1.6 !important; padding: 0.4em 0.2em 0.8em !important; border: 0 !important; border-bottom: 2px solid transparent !important; border-radius: 0 !important; white-space: nowrap; width: auto !important; min-width: 0 !important; background: transparent !important; }
 	.portfolio-filters button.is-active, .portfolio-filters button:hover { border-bottom-color: currentColor !important; }
 	.tiles + footer, section.tiles ~ footer { margin-top: 2.5em; }
+
+/* Spacing between a single figure and an adjacent gallery grid */
+.area-gallery figure + .gallery-grid, .area-gallery .gallery-grid + figure { margin-top: 1.5em; }
