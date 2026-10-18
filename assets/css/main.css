@@ -3410,3 +3410,9 @@ body[class*="project-"] .project-meta > div { background: var(--project-surface)
 
 /* Spacing between a single figure and an adjacent gallery grid */
 .area-gallery figure + .gallery-grid, .area-gallery .gallery-grid + figure { margin-top: 1.5em; }
+
+/* Home wordmark (light brand set) */
+.home-wordmark { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: clamp(2.25rem, 10vw, 5rem); line-height: 1.1; letter-spacing: -0.01em; text-align: center; white-space: nowrap; margin: 0.4em 0 0.6em 0; }
+.home-wordmark .wm-mous { color: #2E7D6B; }
+.home-wordmark .wm-a { color: #D9921A; }
+.home-wordmark .wm-rchitect { color: #12302E; }
