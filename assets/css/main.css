@@ -3416,3 +3416,8 @@ body[class*="project-"] .project-meta > div { background: var(--project-surface)
 .home-wordmark .wm-mous { color: #2E7D6B; }
 .home-wordmark .wm-a { color: #D9921A; }
 .home-wordmark .wm-rchitect { color: #12302E; }
+
+/* Home header MA mark */
+#header .logo .ma-mark { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.6em; letter-spacing: 0; text-transform: none; }
+#header .logo .ma-m { color: #2E7D6B; }
+#header .logo .ma-a { color: #D9921A; }
