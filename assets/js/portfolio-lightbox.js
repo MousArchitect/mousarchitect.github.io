@@ -1,6 +1,6 @@
 (function () {
 	var modal = document.getElementById('portfolio-lightbox');
-	var triggers = document.querySelectorAll('.portfolio-lightbox-trigger');
+	var triggers = Array.prototype.slice.call(document.querySelectorAll('.portfolio-lightbox-trigger'));
 	if (!modal || !triggers.length) return;
 
 	var panel = modal.querySelector('.portfolio-lightbox-panel');
@@ -8,8 +8,34 @@
 	var title = modal.querySelector('#portfolio-lightbox-title');
 	var category = modal.querySelector('.portfolio-lightbox-category');
 	var closeButton = modal.querySelector('.portfolio-lightbox-close');
+	var previousButton = modal.querySelector('.portfolio-lightbox-prev');
+	var nextButton = modal.querySelector('.portfolio-lightbox-next');
 	var lastTrigger = null;
+	var currentTrigger = null;
 	var closeTimer = null;
+
+	function visibleTriggers() {
+		return triggers.filter(function (trigger) {
+			var project = trigger.closest('article');
+			return project && !project.classList.contains('is-filtered-out');
+		});
+	}
+
+	function updateNavigation() {
+		var visible = visibleTriggers();
+		var index = visible.indexOf(currentTrigger);
+		previousButton.disabled = index <= 0;
+		nextButton.disabled = index === -1 || index >= visible.length - 1;
+	}
+
+	function showTrigger(trigger) {
+		currentTrigger = trigger;
+		image.src = trigger.getAttribute('data-image');
+		image.alt = trigger.getAttribute('data-title') + ' preview';
+		title.textContent = trigger.getAttribute('data-title');
+		category.textContent = trigger.getAttribute('data-category');
+		updateNavigation();
+	}
 
 	function closeModal() {
 		modal.classList.remove('is-visible');
@@ -19,21 +45,25 @@
 		closeTimer = window.setTimeout(function () {
 			if (!modal.classList.contains('is-visible')) modal.hidden = true;
 		}, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 350);
-		if (lastTrigger) lastTrigger.focus();
+		if (lastTrigger && !lastTrigger.closest('article').classList.contains('is-filtered-out')) lastTrigger.focus();
 	}
 
 	function openModal(trigger) {
 		window.clearTimeout(closeTimer);
 		lastTrigger = trigger;
-		image.src = trigger.getAttribute('data-image');
-		image.alt = trigger.getAttribute('data-title') + ' preview';
-		title.textContent = trigger.getAttribute('data-title');
-		category.textContent = trigger.getAttribute('data-category');
+		showTrigger(trigger);
 		modal.hidden = false;
 		modal.classList.add('is-visible');
 		modal.setAttribute('aria-hidden', 'false');
 		document.body.classList.add('is-lightbox-open');
 		closeButton.focus();
+	}
+
+	function navigate(direction) {
+		var visible = visibleTriggers();
+		var index = visible.indexOf(currentTrigger);
+		var target = visible[index + direction];
+		if (target) showTrigger(target);
 	}
 
 	triggers.forEach(function (trigger) {
@@ -43,6 +73,8 @@
 	});
 
 	closeButton.addEventListener('click', closeModal);
+	previousButton.addEventListener('click', function () { navigate(-1); });
+	nextButton.addEventListener('click', function () { navigate(1); });
 	modal.addEventListener('click', function (event) {
 		if (event.target === modal) closeModal();
 	});
@@ -50,6 +82,15 @@
 		event.stopPropagation();
 	});
 	document.addEventListener('keydown', function (event) {
-		if (event.key === 'Escape' && modal.classList.contains('is-visible')) closeModal();
+		if (!modal.classList.contains('is-visible')) return;
+		if (event.key === 'Escape') closeModal();
+		if (event.key === 'ArrowLeft' && !previousButton.disabled) {
+			event.preventDefault();
+			navigate(-1);
+		}
+		if (event.key === 'ArrowRight' && !nextButton.disabled) {
+			event.preventDefault();
+			navigate(1);
+		}
 	});
 }());
