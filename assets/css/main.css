@@ -3420,9 +3420,26 @@ body[class*="project-"] .project-meta > div { background: var(--project-surface)
 /* Portfolio filter and spacing fixes */
 	.portfolio-filters button, .portfolio-filters button:hover, .portfolio-filters button.is-active { box-shadow: none !important; height: auto !important; line-height: 1.6 !important; padding: 0.4em 0.2em 0.8em !important; border: 0 !important; border-bottom: 2px solid transparent !important; border-radius: 0 !important; white-space: nowrap; width: auto !important; min-width: 0 !important; background: transparent !important; }
 	.portfolio-filters button.is-active, .portfolio-filters button:hover { border-bottom-color: currentColor !important; }
-	.tiles + footer, section.tiles ~ footer { margin-top: 2.5em; }
+		.tiles + footer, section.tiles ~ footer { margin-top: 2.5em; }
 
-/* Spacing between a single figure and an adjacent gallery grid */
+	/* Portfolio project cards: keep media and text in separate readable blocks. */
+		.portfolio-projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2em; margin: 2em 0 0; }
+		.portfolio-projects article { background: #ffffff; border-radius: 4px; display: flex; flex-direction: column; margin: 0; overflow: hidden; width: auto; }
+		.portfolio-projects article > .image { border-radius: 0; flex: none; height: auto; aspect-ratio: 16 / 10; transform: none; }
+		.portfolio-projects article > .image img { height: 100%; object-fit: cover; width: 100%; }
+		.portfolio-projects article > .image:before { opacity: .12; }
+		.portfolio-projects article > .image:after { opacity: .12; }
+		.portfolio-projects article > a { align-items: flex-start; background: #ffffff; color: #2f3e2f; display: block; height: auto; justify-content: flex-start; padding: 1.35em 1.5em 1.5em; position: static; text-align: left; width: 100%; }
+		.portfolio-projects article > a:hover { color: #2f3e2f !important; }
+		.portfolio-projects article > a h2 { color: #2f3e2f; margin: 0 0 .45em; }
+		.portfolio-projects article > a .content { max-height: none; margin-top: 0; opacity: 1; }
+		.portfolio-projects article > a .content h3 { color: #596752; margin-bottom: .65em; }
+		.portfolio-projects article > a .content p { color: #596752; margin-bottom: 0; }
+		.portfolio-projects article:hover > .image { transform: none; }
+		body:not(.is-touch) .portfolio-projects article:hover .content { max-height: none; opacity: 1; }
+		@media screen and (max-width: 736px) { .portfolio-projects { grid-template-columns: 1fr; gap: 1.5em; } }
+
+	/* Spacing between a single figure and an adjacent gallery grid */
 .area-gallery figure + .gallery-grid, .area-gallery .gallery-grid + figure { margin-top: 1.5em; }
 
 /* Home wordmark (light brand set) */
