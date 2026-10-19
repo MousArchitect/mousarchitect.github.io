@@ -13,6 +13,7 @@
 	var lastTrigger = null;
 	var currentTrigger = null;
 	var closeTimer = null;
+	var transitionId = 0;
 
 	function visibleTriggers() {
 		return triggers.filter(function (trigger) {
@@ -38,6 +39,8 @@
 	}
 
 	function closeModal() {
+		transitionId++;
+		image.classList.remove('is-slide-out-left', 'is-slide-out-right', 'is-slide-in-left', 'is-slide-in-right');
 		modal.classList.remove('is-visible');
 		modal.setAttribute('aria-hidden', 'true');
 		document.body.classList.remove('is-lightbox-open');
@@ -59,11 +62,34 @@
 		closeButton.focus();
 	}
 
+	function transitionTo(trigger, direction) {
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+			showTrigger(trigger);
+			return;
+		}
+
+		var currentTransition = ++transitionId;
+		var exitClass = direction > 0 ? 'is-slide-out-left' : 'is-slide-out-right';
+		var enterClass = direction > 0 ? 'is-slide-in-right' : 'is-slide-in-left';
+		image.classList.remove('is-slide-in-left', 'is-slide-in-right');
+		image.classList.add(exitClass);
+
+		window.setTimeout(function () {
+			if (currentTransition !== transitionId) return;
+			showTrigger(trigger);
+			image.classList.remove(exitClass);
+			image.classList.add(enterClass);
+			window.requestAnimationFrame(function () {
+				if (currentTransition === transitionId) image.classList.remove(enterClass);
+			});
+		}, 175);
+	}
+
 	function navigate(direction) {
 		var visible = visibleTriggers();
 		var index = visible.indexOf(currentTrigger);
 		var target = visible[index + direction];
-		if (target) showTrigger(target);
+		if (target) transitionTo(target, direction);
 	}
 
 	triggers.forEach(function (trigger) {
