@@ -3455,3 +3455,10 @@ body[class*="project-"] .project-meta > div { background: var(--project-surface)
 /* Home: MA mark pinned to the far left, level with the menu button */
 #header .logo.logo-ma { position: absolute; left: 2em; top: 1.9em; margin: 0; z-index: 10000; }
 @media screen and (max-width: 736px) { #header .logo.logo-ma { left: 1em; top: 0.75em; } }
+
+/* Founding client rate */
+.price del { font-weight: 400; font-size: .6em; opacity: .55; margin-right: .35em; }
+.founding-note { border-left: 3px solid #2f3e2f; padding-left: .9em; }
+.founding-line { font-size: .85em; margin-top: -.5em; }
+.founding-line a { border-bottom: 1px dotted currentColor; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
