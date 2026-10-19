@@ -3363,7 +3363,7 @@ margin: -0.5em 0 0.75em;
 		.portfolio-lightbox.is-visible { opacity: 1; pointer-events: auto; visibility: visible; }
 		.portfolio-lightbox-panel { background: #f5f0e8; border-radius: 4px; max-height: calc(100vh - 4em); max-width: 72em; overflow: auto; position: relative; transform: translateY(10px); transition: transform .35s ease; width: min(100%, 68em); }
 		.portfolio-lightbox.is-visible .portfolio-lightbox-panel { transform: translateY(0); }
-		.portfolio-lightbox-image { display: block; height: auto; margin: 0 auto; max-height: 74vh; max-width: 100%; object-fit: contain; width: auto; }
+		.portfolio-lightbox-image { display: block; height: auto; margin: 0 auto; max-height: 74vh; max-width: 100%; object-fit: contain; width: 100%; }
 		.portfolio-lightbox-meta { padding: 1.25em 1.5em 1.5em; }
 		.portfolio-lightbox-meta h2 { color: #2f3e2f; margin-bottom: .3em; }
 		.portfolio-lightbox-category { color: #596752; font-size: .85em; font-weight: 700; letter-spacing: .1em; margin: 0; text-transform: uppercase; }
