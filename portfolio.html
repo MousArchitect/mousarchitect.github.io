@@ -74,9 +74,9 @@
 								</nav>
 								<section class="tiles">
 									<article class="style1" id="project-1" data-categories="landscape">
-									<span class="image">
-										<img src="images/pic04.jpg" alt="Knight Tour" />
-									</span>
+										<button type="button" class="image portfolio-lightbox-trigger" data-image="images/pic04.jpg" data-title="Knight Tour" data-category="Landscape Design" aria-label="Preview Knight Tour">
+											<img src="images/pic04.jpg" alt="Knight Tour" />
+										</button>
 									<a href="knight-tour.html">
 										<h2>Knight Tour</h2>
 										<div class="content">
@@ -86,9 +86,9 @@
 									</a>
 								</article>
 									<article class="style2" id="project-2" data-categories="architecture landscape">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="Makkah Valley" />
-									</span>
+										<button type="button" class="image portfolio-lightbox-trigger" data-image="images/pic03.jpg" data-title="Makkah Valley" data-category="Architecture / Landscape" aria-label="Preview Makkah Valley">
+											<img src="images/pic03.jpg" alt="Makkah Valley" />
+										</button>
 									<a href="makkah-valley.html">
 										<h2>Makkah Valley</h2>
 										<div class="content">
@@ -98,9 +98,9 @@
 									</a>
 								</article>
 									<article class="style3" id="project-3" data-categories="architecture landscape">
-										<span class="image">
-											<img src="images/northport-thrive-tile.jpg" alt="Northport Thrive park design, aerial view" />
-										</span>
+											<button type="button" class="image portfolio-lightbox-trigger" data-image="images/northport-thrive-tile.jpg" data-title="Northport Thrive" data-category="Urban Design / Landscape / Architecture" aria-label="Preview Northport Thrive">
+												<img src="images/northport-thrive-tile.jpg" alt="Northport Thrive park design, aerial view" />
+											</button>
 										<a href="northport-thrive.html">
 										<h2>Northport Thrive</h2>
 										<div class="content">
@@ -110,9 +110,9 @@
 										</a>
 									</article>
 									<article class="style4" id="project-4" data-categories="architecture landscape">
-										<span class="image">
-											<img src="images/eco-pinnacle-tile.jpg" alt="Eco Pinnacle tower and plaza design" />
-										</span>
+											<button type="button" class="image portfolio-lightbox-trigger" data-image="images/eco-pinnacle-tile.jpg" data-title="Eco Pinnacle" data-category="Architecture / Landscape" aria-label="Preview Eco Pinnacle">
+												<img src="images/eco-pinnacle-tile.jpg" alt="Eco Pinnacle tower and plaza design" />
+											</button>
 										<a href="eco-pinnacle.html">
 										<h2>Eco Pinnacle</h2>
 										<div class="content">
@@ -121,8 +121,18 @@
 											</div>
 										</a>
 									</article>
-							</section>
-							<footer>
+								</section>
+								<div class="portfolio-lightbox" id="portfolio-lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="portfolio-lightbox-title">
+									<div class="portfolio-lightbox-panel">
+										<button type="button" class="portfolio-lightbox-close" aria-label="Close image preview">&times;</button>
+										<img class="portfolio-lightbox-image" src="images/pic04.jpg" alt="Project preview" />
+										<div class="portfolio-lightbox-meta">
+											<h2 id="portfolio-lightbox-title">Project preview</h2>
+											<p class="portfolio-lightbox-category"></p>
+										</div>
+									</div>
+								</div>
+								<footer>
 								<ul class="actions">
 									<li><a href="contact.html" class="button primary">Get In Touch</a></li>
 								</ul>
@@ -159,6 +169,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/portfolio-filters.js"></script>
+			<script src="assets/js/portfolio-lightbox.js"></script>
 
 	</body>
 </html>
