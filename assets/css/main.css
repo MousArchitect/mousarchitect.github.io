@@ -3429,12 +3429,12 @@ body[class*="project-"] .project-meta > div { background: var(--project-surface)
 		.portfolio-projects article > .image img { height: 100%; object-fit: cover; width: 100%; }
 		.portfolio-projects article > .image:before { opacity: .12; }
 		.portfolio-projects article > .image:after { opacity: .12; }
-		.portfolio-projects article > a { align-items: flex-start; background: #ffffff; color: #2f3e2f; display: block; height: auto; justify-content: flex-start; padding: 1.35em 1.5em 1.5em; position: static; text-align: left; width: 100%; }
+		.portfolio-projects article > a { align-items: flex-start; background: #ffffff; color: #2f3e2f; display: block; height: auto; justify-content: flex-start; padding: 1.75em 1.75em 2em; position: static; text-align: left; width: 100%; }
 		.portfolio-projects article > a:hover { color: #2f3e2f !important; }
-		.portfolio-projects article > a h2 { color: #2f3e2f; margin: 0 0 .45em; }
+		.portfolio-projects article > a h2 { color: #2f3e2f; margin: 0 0 .7em; }
 		.portfolio-projects article > a .content { max-height: none; margin-top: 0; opacity: 1; }
-		.portfolio-projects article > a .content h3 { color: #596752; margin-bottom: .65em; }
-		.portfolio-projects article > a .content p { color: #596752; margin-bottom: 0; }
+		.portfolio-projects article > a .content h3 { color: #596752; margin-bottom: .85em; }
+		.portfolio-projects article > a .content p { color: #596752; line-height: 1.6; margin-bottom: 0; }
 		.portfolio-projects article:hover > .image { transform: none; }
 		body:not(.is-touch) .portfolio-projects article:hover .content { max-height: none; opacity: 1; }
 		@media screen and (max-width: 736px) { .portfolio-projects { grid-template-columns: 1fr; gap: 1.5em; } }
