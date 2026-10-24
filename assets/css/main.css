@@ -3357,7 +3357,7 @@ margin: -0.5em 0 0.75em;
 		.tiles article.is-filtered-out { display: none; }
 		.portfolio-filters + .tiles article > .image { overflow: hidden; }
 		.portfolio-filters + .tiles article > .image img { transition: transform .35s ease; }
-		.portfolio-filters + .tiles article:hover > .image img, .portfolio-filters + .tiles article:focus-within > .image img { transform: scale(1.08); }
+		.portfolio-filters + .tiles article:hover > .image img, .portfolio-filters + .tiles article:focus-within > .image img { transform: scale(1.04); }
 		.portfolio-filters + .tiles article > .portfolio-lightbox-trigger { appearance: none; background: transparent; border: 0; cursor: zoom-in; padding: 0; text-align: left; }
 		.portfolio-lightbox { align-items: center; background: rgba(18,24,20,.86); display: flex; inset: 0; justify-content: center; opacity: 0; padding: 2em; pointer-events: none; position: fixed; transition: opacity .35s ease, visibility .35s ease; visibility: hidden; z-index: 10000; }
 		.portfolio-lightbox.is-visible { opacity: 1; pointer-events: auto; visibility: visible; }
